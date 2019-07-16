@@ -14,6 +14,8 @@ const router = express.Router()
 const environment = process.env.NODE_ENV
 const stage = require('./config')[environment]
 
+const port = stage.port || 3000
+
 app.use(bodyParser.json())
 app.use(
   bodyParser.urlencoded({
@@ -27,8 +29,8 @@ if (environment !== 'production') {
 
 app.use('/api/v1', routes(router))
 
-app.listen(`${stage.port}`, () => {
-  console.log(`Server now listening at localhost:${stage.port}`)
+const server = app.listen(`${port}`, () => {
+  console.log(`Server now listening at localhost:${port}`)
 })
 
-module.exports = app
+module.exports = server

@@ -1,6 +1,6 @@
 {
     "extends": ["airbnb-base", "prettier", "plugin:node/recommended"],
-    "plugins": ["prettier"],
+    "plugins": ["prettier", "jest"],
     "rules": {
         "prettier/prettier": ["error"],
         "no-console": "off",
@@ -17,6 +17,7 @@
         "ecmaVersion": 6
     },
     "env": {
-        "es6": true
+        "es6": true,
+        "jest/globals": true
     }
 }
