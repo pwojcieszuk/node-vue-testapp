@@ -5,6 +5,7 @@ require('dotenv').config()
 const express = require('express')
 const logger = require('morgan')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 const routes = require('./routes/index.js')
 
@@ -27,7 +28,7 @@ if (environment !== 'production') {
   app.use(logger('dev'))
 }
 
-app.use('/api/v1', routes(router))
+app.use('/api/v1', cors(), routes(router))
 
 const server = app.listen(`${port}`, () => {
   console.log(`Server now listening at localhost:${port}`)

@@ -1,5 +1,5 @@
 'use strict'
 
 module.exports = {
-  get: (req, res) => res.send('Hello!'),
+  get: (req, res) => res.send({ msg: 'Hello!' }),
 }
