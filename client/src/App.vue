@@ -1,17 +1,22 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <Hello />
+    <nav>
+      <router-link to="/">Home</router-link>
+      <router-link to="/login">Login</router-link>
+      <router-link to="/logout">Logout</router-link>
+    </nav>
+    <Error />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello.vue'
-
+import Error from './components/Error'
 export default {
   name: 'app',
   components: {
-    Hello,
+    Error,
   },
 }
 </script>
