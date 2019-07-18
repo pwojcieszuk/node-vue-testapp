@@ -8,4 +8,5 @@ module.exports = router => {
     .route('/hello')
     .all(auth)
     .get(controller.get)
+    .post(controller.post)
 }
